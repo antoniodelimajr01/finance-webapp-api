@@ -77,7 +77,7 @@ public class DebitService {
             db.setValue(debit.getValue());
             db.setMonth(debit.getMonth());
             db.setYear(debit.getYear());
-            db.setAuthorId(debit.getAuthorId());
+            db.setAuthor(debit.getAuthor());
             db.setCategoryId(debit.getCategoryId());
 
             LOG.info("Update Debit: {}", db.toString());

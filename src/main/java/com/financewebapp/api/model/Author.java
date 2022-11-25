@@ -13,8 +13,9 @@ import javax.persistence.*;
 public class Author {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "AuthorId")
     private Long authorId;
-
+    
     @Column(name = "AuthorName")
     private String authorName;
 }

@@ -1,12 +1,20 @@
 package com.financewebapp.api.model;
 
+import java.sql.Timestamp;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
+
+import org.hibernate.annotations.CreationTimestamp;
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.hibernate.annotations.CreationTimestamp;
-
-import javax.persistence.*;
-import java.sql.Timestamp;
 
 @Entity(name = "Debits")
 @NoArgsConstructor
@@ -18,6 +26,10 @@ public class Debit {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @OneToOne
+    @JoinColumn(name = "AuthorId", referencedColumnName = "authorId")
+    private Author author;
+    
     @Column(name = "name")
     private String name;
 
@@ -33,9 +45,6 @@ public class Debit {
 
     @Column(name = "year")
     private Integer year;
-
-    @Column(name = "authorId")
-    private Long authorId;
 
     @Column(name = "categoryId")
     private Long categoryId;

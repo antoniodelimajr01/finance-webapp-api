@@ -34,7 +34,8 @@ public class PropertyBeanUtils extends BeanUtilsBean {
 
         copyProperty(debitDB, "month", debit.getMonth());
 
-        copyProperty(debitDB, "authorId", debit.getAuthorId());
+//        TODO: refactor considering complex object "Debit"
+//        copyProperty(debitDB, "authorId", debit.getAuthorId());
 
         copyProperty(debitDB, "categoryId", debit.getCategoryId());
     }
